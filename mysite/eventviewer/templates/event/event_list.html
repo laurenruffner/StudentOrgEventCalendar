@@ -1,0 +1,27 @@
+<h2 class="form-title">event</h2>
+
+<table class="table table-fluid">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Event Date and Time </th>
+            <th>Event Description</th>
+            <th>Event Organizaiton</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for Event in object_list %}
+        <tr>
+            <td>{{ Event.event_name }}</td>
+            <td>{{ Event.event_datetime }}</td>
+            <td>{{ Event.event_description }}</td>
+            <td>{{ Event.organizaiton.org_name }}</td>
+            <td><a href="{% url "event_detail" Event.id %}">view</a> <a href="{% url "event_update" Event.id %}">edit</a> <a href="{% url "event_delete" Event.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url "event_create" %}">New</a>
+</div>

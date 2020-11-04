@@ -1,0 +1,27 @@
+<h2 class="form-title">Organization</h2>
+
+<table class="table table-fluid">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>URL</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for Organization in object_list %}
+        <tr>
+            <td>{{Organization.org_name}}</td>
+            <td>{{Organization.org_url}}</td>
+            <td>{{Organization.org_description}}</td>
+            <td>{{Organization.org_category}}</td>
+            <td><a href="{% url 'Organization_detail' Organization.id %}">view</a> <a href="{% url 'Organization_update' Organization.id %}">edit</a> <a href="{% url 'Organization_delete' Organization.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url "organization_create" %}">New</a>
+</div>

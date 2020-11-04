@@ -1,0 +1,5 @@
+from .event_delete_test import eventDeleteTestCase
+from .event_update_test import eventUpdateTestCase
+from .event_detail_test import eventDetailTestCase
+from .event_create_test import eventCreateTestCase
+from .event_list_test import eventListTestCase
